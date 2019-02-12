@@ -5,7 +5,7 @@ import Page, { SectionHeading, Heading, Subheading } from '../components/Page';
 
 import { withNamespaces, Trans } from "../lib/i18n";
 
-export default withNamespaces("about")(function About() {
+export default withNamespaces("pages:about")(function About() {
   return (
     <Page showEmailCapture={false}>
       <NextSeo
@@ -21,7 +21,7 @@ export default withNamespaces("about")(function About() {
       />
 
       <SectionHeading>
-        <Heading><Trans>About</Trans></Heading>
+        <Heading><Trans i18nKey="title">About</Trans></Heading>
 
         <Subheading>
           This website provides a beginner’s checklist for staying safe on the

@@ -10,7 +10,7 @@ type Props = {
   showHeaderShadow: boolean,
 };
 
-export default withNamespaces("header")(function Header(props: Props) {
+export default withNamespaces("components")(function Header(props: Props) {
   const { showHeaderShadow, t } = props;
 
   return (
@@ -29,11 +29,11 @@ export default withNamespaces("header")(function Header(props: Props) {
           type='button'
           onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'de' : 'en')}
         >
-          {t('toggle-locale')}
+          {t('header.toggle-locale')}
         </button>
         <Link href="/about">
           <GhostButton as="a" href="/about">
-            <Trans i18nKey="title">About</Trans>
+            <Trans i18nKey="header.title">About</Trans>
           </GhostButton>
         </Link>
 
@@ -43,7 +43,7 @@ export default withNamespaces("header")(function Header(props: Props) {
           rel="noopener noreferrer"
           as="a"
         >
-          <Trans i18nKey="contribute">Contribute</Trans>
+          <Trans i18nKey="header.contribute">Contribute</Trans>
         </PrimaryButton>
       </ButtonRowContainer>
     </Container>

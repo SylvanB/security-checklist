@@ -5,6 +5,7 @@ import type { GetInitialProps } from '../types';
 import Checklist from '../components/Checklist';
 import ShareButtons from '../components/ShareButtons';
 import BottomShare from '../components/BottomShare';
+import { Trans, withNamespaces } from "../lib/i18n";
 
 class Index extends React.Component<{}> {
   static async getInitialProps({ res }: GetInitialProps) {
@@ -14,20 +15,18 @@ class Index extends React.Component<{}> {
       res.setHeader('Cache-Control', `public,s-maxage=${cacheAge}`);
     }
 
-    return {
-      namespacesRequired: ['common', 'data']
-    };
+    return { namespacesRequired: ["pages", "components"] };
   }
 
   render() {
     return (
       <Page>
         <SectionHeading>
-          <Heading>Be safe on the internet.</Heading>
+          <Heading><Trans i18nKey="index.title">Be safe on the internet.</Trans></Heading>
           <Subheading>
-            An open source checklist of resources designed to improve your
+          <Trans i18nKey="index.desc">An open source checklist of resources designed to improve your
             online privacy and security. Check things off to keep track as you
-            go.
+            go.</Trans>
           </Subheading>
         </SectionHeading>
 
@@ -43,4 +42,4 @@ class Index extends React.Component<{}> {
   }
 }
 
-export default Index;
+export default withNamespaces("pages")(Index);

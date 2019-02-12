@@ -22,7 +22,7 @@ class Footer extends React.Component {
         </Icons>
 
         <Description>
-          {t("copyright")}.<Trans i18nKey="github-link" url="https://github.com/brianlovin/security-checklist">This is
+          {t("footer.copyright")}.<Trans i18nKey="footer.github" url="https://github.com/brianlovin/security-checklist">This is
             <a
               href="{url}"
               target="_blank"
@@ -37,5 +37,5 @@ class Footer extends React.Component {
   }
 }
 
-export default withNamespaces("footer")(Footer);
+export default withNamespaces("components")(Footer);
 

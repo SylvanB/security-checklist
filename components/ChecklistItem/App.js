@@ -12,7 +12,6 @@ import {
 } from './style';
 import Offer from './Offer';
 import Icon from '../Icon';
-
 type Props = {
   app: App,
 };
