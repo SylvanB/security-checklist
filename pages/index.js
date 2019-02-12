@@ -14,7 +14,9 @@ class Index extends React.Component<{}> {
       res.setHeader('Cache-Control', `public,s-maxage=${cacheAge}`);
     }
 
-    return {};
+    return {
+      namespacesRequired: ['common', 'data']
+    };
   }
 
   render() {

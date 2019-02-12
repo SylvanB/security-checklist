@@ -6,6 +6,7 @@ import * as Sentry from '@sentry/browser';
 import NextSeo from 'next-seo';
 import { GlobalStyles } from '../static/normalize';
 import defaultSEO from '../config/next-seo.js';
+import i18n from '../lib/i18n';
 
 const SENTRY_PUBLIC_DSN =
   'https://42334f0365364b63bc57f4245d111b87@sentry.io/1370339';
@@ -16,6 +17,19 @@ class SecurityChecklistApp extends App {
 
     Sentry.init({ dsn: SENTRY_PUBLIC_DSN });
   }
+
+  static async getInitialProps({ Component, ctx }) {
+    let pageProps = {
+      namespacesRequired: ['common']
+    }
+
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx)
+    }
+
+    return { pageProps }
+  }
+
 
   // $FlowFixMe
   componentDidCatch(error: mixed, errorInfo: any) {
@@ -140,4 +154,4 @@ class SecurityChecklistApp extends App {
   }
 }
 
-export default SecurityChecklistApp;
+export default i18n.appWithTranslation(SecurityChecklistApp);

@@ -10,7 +10,9 @@ class Error extends React.Component<{}> {
       res.setHeader('Cache-Control', `public,s-maxage=${cacheAge}`);
     }
 
-    return {};
+    return {
+      namespacesRequired: ['common', 'error']
+    };
   }
 
   render() {
