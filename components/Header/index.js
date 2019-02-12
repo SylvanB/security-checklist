@@ -4,13 +4,14 @@ import Link from 'next/link';
 import { Container, ButtonRowContainer, Label, LogoLink } from './style';
 import { PrimaryButton, GhostButton } from '../Button';
 import Logo from './Logo';
+import { Trans, withNamespaces, i18n } from "../../lib/i18n";
 
 type Props = {
   showHeaderShadow: boolean,
 };
 
-export default function Header(props: Props) {
-  const { showHeaderShadow } = props;
+export default withNamespaces("header")(function Header(props: Props) {
+  const { showHeaderShadow, t } = props;
 
   return (
     <Container showHeaderShadow={showHeaderShadow} data-cy="header">
@@ -24,9 +25,15 @@ export default function Header(props: Props) {
       </div>
 
       <ButtonRowContainer>
+        <button
+          type='button'
+          onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'de' : 'en')}
+        >
+          {t('toggle-locale')}
+        </button>
         <Link href="/about">
           <GhostButton as="a" href="/about">
-            About
+            <Trans i18nKey="title">About</Trans>
           </GhostButton>
         </Link>
 
@@ -36,9 +43,9 @@ export default function Header(props: Props) {
           rel="noopener noreferrer"
           as="a"
         >
-          Contribute
+          <Trans i18nKey="contribute">Contribute</Trans>
         </PrimaryButton>
       </ButtonRowContainer>
     </Container>
   );
-}
+})
