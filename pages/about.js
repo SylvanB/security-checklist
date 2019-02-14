@@ -7,7 +7,7 @@ import { withNamespaces, Trans } from "../lib/i18n";
 
 export default withNamespaces("pages:about")(function About() {
   return (
-    <Page showEmailCapture={false}>
+    <Page showEmailCapture={false} displayProgress={false}>
       <NextSeo
         config={{
           title: 'Security Checklist · About',
