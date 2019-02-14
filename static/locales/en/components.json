@@ -1,4 +1,11 @@
 {
-    "copyright": "Copyright whenever",
-    "github-link": ""
+    "header": {
+        "logo": "Security Checklist",
+        "title": "About",
+        "contribute": "Contribute"
+    },
+    "footer": {
+        "copyright": "Copyright whenever",
+        "github": "This is<1>open source</1>."
+    }
 }

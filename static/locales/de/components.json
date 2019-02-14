@@ -1,6 +1,11 @@
 {
     "header": {
+        "logo": "Security Checkliste",
         "title": "Über",
         "contribute": "Beitragen"
+    },
+    "footer": {
+        "copyright": "Copyright Wannauchimmer",
+         "github": "Dies ist <1>OpenSource</1>."
     }
 }
